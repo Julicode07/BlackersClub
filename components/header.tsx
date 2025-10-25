@@ -25,13 +25,6 @@ export function Header() {
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Image
-              src="/blackers-logo.png"
-              alt="Blackers Logo"
-              width={60}
-              height={60}
-              className="w-12 h-12 md:w-14 md:h-14"
-            />
             <div className="flex flex-col leading-none">
               <span className="text-xl md:text-2xl font-black text-foreground tracking-tighter">BLACKERS</span>
               <span className="text-xs md:text-sm font-bold text-primary tracking-wider">BEACH CLUB</span>
@@ -76,23 +69,21 @@ export function Header() {
               </Link>
             )}
             <Link
-              href="/noticias"
-              className={`transition-colors text-sm font-medium uppercase tracking-wider ${
-                pathname === "/noticias" ? "text-primary" : "text-foreground hover:text-primary"
-              }`}
+              href={pathname === "/noticias" ? "/" : "/noticias"}
+              className={`transition-colors text-sm font-medium uppercase tracking-wider ${pathname === "/noticias" ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
             >
               Noticias
             </Link>
-            <Link
+            {/* <Link
               href="/admin"
-              className={`transition-colors text-sm font-medium uppercase tracking-wider ${
-                pathname === "/admin" ? "text-primary" : "text-foreground hover:text-primary"
-              }`}
+              className={`transition-colors text-sm font-medium uppercase tracking-wider ${pathname === "/admin" ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
             >
               Admin
-            </Link>
+            </Link> */}
             <Button
-              onClick={() => isHomePage && scrollToSection("unete")}
+              onClick={() => isHomePage ? scrollToSection("unete") : window.location.href = "/"}
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               Únete
@@ -145,26 +136,28 @@ export function Header() {
               </Link>
             )}
             <Link
-              href="/noticias"
-              className={`transition-colors text-sm font-medium uppercase tracking-wider text-left ${
-                pathname === "/noticias" ? "text-primary" : "text-foreground hover:text-primary"
-              }`}
+              href={pathname === "/noticias" ? "/" : "/noticias"}
+              className={`transition-colors text-sm font-medium uppercase tracking-wider text-left ${pathname === "/noticias" ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Noticias
             </Link>
             <Link
               href="/admin"
-              className={`transition-colors text-sm font-medium uppercase tracking-wider text-left ${
-                pathname === "/admin" ? "text-primary" : "text-foreground hover:text-primary"
-              }`}
+              className={`transition-colors text-sm font-medium uppercase tracking-wider text-left ${pathname === "/admin" ? "text-primary" : "text-foreground hover:text-primary"
+                }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Admin
             </Link>
             <Button
               onClick={() => {
-                if (isHomePage) scrollToSection("unete")
+                if (isHomePage) {
+                  scrollToSection("unete")
+                } else {
+                  window.location.href = "/"
+                }
                 setIsMenuOpen(false)
               }}
               className="bg-primary hover:bg-primary/90 text-primary-foreground w-full"

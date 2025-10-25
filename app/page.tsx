@@ -12,11 +12,33 @@ export default function Home() {
     <main className="min-h-screen bg-background relative">
       <VolleyballDecorations />
       <Header />
-      <Hero />
-      <About />
-      <VolleyballInfo />
-      <Plans />
-      <JoinUs />
+
+      {/* Hero Section */}
+      <section className="relative">
+        <Hero />
+      </section>
+
+      {/* About Section */}
+      <section className="relative">
+        <About />
+      </section>
+
+      {/* Volleyball Info Section */}
+      <section className="relative">
+        <VolleyballInfo />
+      </section>
+
+      {/* Plans Section */}
+      <section className="relative">
+        <Plans />
+      </section>
+
+      {/* Join Us Section */}
+      <section className="relative">
+        <JoinUs />
+      </section>
+
+      {/* Footer */}
       <Footer />
     </main>
   )

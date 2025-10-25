@@ -22,7 +22,7 @@ export function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/80"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-background via-background to-background/80"></div>
         {/* Volleyball net pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -82,21 +82,21 @@ export function Hero() {
                 </div>
               </div>
 
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground uppercase tracking-tighter text-balance leading-none">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground uppercase tracking-tighter text-balance leading-none">
                 DOMINA
                 <span className="block text-primary mt-2">LA ARENA</span>
               </h1>
 
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-xl">
                 Únete al club de voleibol de playa más competitivo. Entrena con los mejores, compite al más alto nivel y
                 forma parte de la familia Blackers.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start pt-4">
                 <Button
                   onClick={() => scrollToSection("unete")}
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6 uppercase tracking-wider font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-105"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm px-6 py-4 uppercase tracking-wider font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all hover:scale-105"
                 >
                   Únete Ahora
                 </Button>
@@ -104,25 +104,25 @@ export function Hero() {
                   onClick={() => scrollToSection("planes")}
                   size="lg"
                   variant="outline"
-                  className="border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary text-base px-8 py-6 uppercase tracking-wider font-bold transition-all hover:scale-105"
+                  className="border-2 border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary text-sm px-6 py-4 uppercase tracking-wider font-bold transition-all hover:scale-105"
                 >
                   Ver Planes
                 </Button>
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 pt-8 max-w-lg mx-auto lg:mx-0">
+              <div className="grid grid-cols-3 gap-4 pt-6 max-w-lg mx-auto lg:mx-0">
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl md:text-4xl font-black text-primary">200+</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">Miembros</div>
+                  <div className="text-2xl md:text-3xl font-black text-primary">200+</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">Miembros</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl md:text-4xl font-black text-primary">15+</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">Torneos</div>
+                  <div className="text-2xl md:text-3xl font-black text-primary">15+</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">Torneos</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-3xl md:text-4xl font-black text-primary">8</div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">Años</div>
+                  <div className="text-2xl md:text-3xl font-black text-primary">8</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">Años</div>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export function Hero() {
                     alt="Blackers Logo"
                     width={500}
                     height={500}
-                    className="w-full max-w-md mx-auto drop-shadow-2xl animate-float"
+                    className="w-full max-w-base mx-auto drop-shadow-2xl animate-float"
                     priority
                   />
                 </div>

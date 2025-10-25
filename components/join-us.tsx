@@ -20,12 +20,32 @@ export function JoinUs() {
     plan: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Aquí iría la lógica para enviar el formulario
-    alert("¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.")
+    setIsSubmitting(true)
+
+    // Simular envío por 5 segundos
+    await new Promise(resolve => setTimeout(resolve, 5000))
+
+    setIsSubmitting(false)
+    setIsSuccess(true)
+
+    // Resetear después de 3 segundos
+    setTimeout(() => {
+      setIsSuccess(false)
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        age: "",
+        experience: "",
+        plan: "",
+        message: "",
+      })
+    }, 3000)
   }
 
   const handleChange = (field: string, value: string) => {
@@ -77,19 +97,57 @@ export function JoinUs() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-black text-foreground uppercase tracking-tight mb-4 text-balance">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black text-foreground uppercase tracking-tight mb-4 text-balance">
               Únete a Blackers
             </h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Completa el formulario y da el primer paso para formar parte de nuestra familia. Te contactaremos para
               agendar una sesión de prueba gratuita.
             </p>
           </div>
 
-          <Card className="bg-card border-border hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
+          <Card className="bg-card border-border hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 relative">
             <CardContent className="p-8">
+              {/* Loader overlay */}
+              {isSubmitting && (
+                <div className="absolute inset-0 bg-background/95 backdrop-blur-sm z-50 flex items-center justify-center rounded-lg">
+                  <div className="text-center">
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                      {/* Spinner genial */}
+                      <div className="relative">
+                        <div className="w-12 h-12 border-4 border-primary/30 rounded-full"></div>
+                        <div className="absolute top-0 left-0 w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+                      </div>
+                      {/* Volleyball bouncing */}
+                      <div className="flex gap-2">
+                        <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                        <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                        <div className="w-3 h-3 bg-primary rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-primary mb-2">Enviando tu solicitud...</h3>
+                    <p className="text-muted-foreground">Por favor espera mientras procesamos tu información</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Success overlay */}
+              {isSuccess && (
+                <div className="absolute inset-0 bg-green-50/95 backdrop-blur-sm z-50 flex items-center justify-center rounded-lg">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-green-600 mb-2">¡Gracias!</h3>
+                    <p className="text-green-700 text-lg">Nos comunicaremos contigo pronto</p>
+                  </div>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
@@ -205,6 +263,7 @@ export function JoinUs() {
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting || isSuccess}
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground uppercase tracking-wider"
                 >
                   Enviar Solicitud
