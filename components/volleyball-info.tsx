@@ -1,13 +1,8 @@
 "use client"
 
-import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Waves, Home } from "lucide-react"
 
 export function VolleyballInfo() {
-  const [activeTab, setActiveTab] = useState<"indoor" | "beach">("beach")
-
   return (
     <section id="voleibol" className="py-24 bg-secondary/30 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
@@ -68,234 +63,189 @@ export function VolleyballInfo() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-black text-foreground uppercase tracking-tight mb-4 text-balance">
-              Sobre el Voleibol
+              Voleibol de Playa
             </h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Descubre las diferentes modalidades del voleibol y encuentra la que mejor se adapte a ti.
+              Descubre todo sobre esta emocionante modalidad del voleibol que se juega en la arena.
             </p>
           </div>
 
-          <div className="flex justify-center gap-4 mb-12">
-            <Button
-              onClick={() => setActiveTab("beach")}
-              variant={activeTab === "beach" ? "default" : "outline"}
-              className={
-                activeTab === "beach"
-                  ? "bg-primary text-primary-foreground uppercase tracking-wider font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-all"
-                  : "border-2 border-border text-foreground hover:bg-foreground/10 hover:border-primary/50 uppercase tracking-wider font-bold hover:scale-105 transition-all"
-              }
-              size="lg"
-            >
-              <Waves className="w-5 h-5 mr-2" />
-              Voleibol de Playa
-            </Button>
-            <Button
-              onClick={() => setActiveTab("indoor")}
-              variant={activeTab === "indoor" ? "default" : "outline"}
-              className={
-                activeTab === "indoor"
-                  ? "bg-primary text-primary-foreground uppercase tracking-wider font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-all"
-                  : "border-2 border-border text-foreground hover:bg-foreground/10 hover:border-primary/50 uppercase tracking-wider font-bold hover:scale-105 transition-all"
-              }
-              size="lg"
-            >
-              <Home className="w-5 h-5 mr-2" />
-              Voleibol Indoor
-            </Button>
+          <div className="space-y-8 animate-in fade-in duration-500">
+            <Card className="bg-card border-2 border-primary/20 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 py-0">
+              <div className="grid md:grid-cols-2">
+                <div className="relative h-72">
+                  <img
+                    src="/beach-volleyball-players-on-sand-sunny-day.jpg"
+                    alt="Voleibol de Playa"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-background/50 to-transparent md:block hidden"></div>
+                </div>
+                <CardContent className="p-8 flex flex-col justify-center">
+                  <h3 className="text-3xl font-black text-foreground mb-4 uppercase tracking-wide">
+                    ¿Qué es el Voleibol de Playa?
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    El voleibol de playa se juega al aire libre en arena con equipos de 2 jugadores. Requiere
+                    versatilidad, resistencia física y adaptación a las condiciones climáticas. Es un deporte dinámico
+                    que combina técnica, estrategia y atletismo.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-foreground">
+                        <span className="font-black text-primary">Equipos:</span> 2 jugadores por equipo (sin
+                        sustituciones)
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-foreground">
+                        <span className="font-black text-primary">Cancha:</span> 16m x 8m en arena con red a 2.43m
+                        (hombres) / 2.24m (mujeres)
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-foreground">
+                        <span className="font-black text-primary">Sets:</span> Mejor de 3 sets, primeros 2 a 21
+                        puntos, 3ro a 15
+                      </p>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-foreground">
+                        <span className="font-black text-primary">Versatilidad:</span> Cada jugador debe dominar todas
+                        las habilidades
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-6">
+                  <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Beneficios</h4>
+                  <ul className="space-y-2 text-muted-foreground text-sm">
+                    <li>• Entrenamiento al aire libre</li>
+                    <li>• Mayor resistencia física</li>
+                    <li>• Fortalece piernas en arena</li>
+                    <li>• Conexión con la naturaleza</li>
+                    <li>• Mejora coordinación y reflejos</li>
+                    <li>• Trabajo cardiovascular intenso</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-6">
+                  <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Características</h4>
+                  <ul className="space-y-2 text-muted-foreground text-sm">
+                    <li>• Solo 2 jugadores por equipo</li>
+                    <li>• Sin rotaciones ni posiciones fijas</li>
+                    <li>• Balón más suave y grande</li>
+                    <li>• Influencia del viento y sol</li>
+                    <li>• Superficie de arena</li>
+                    <li>• Mayor exigencia física</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
+                <CardContent className="p-6">
+                  <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Equipamiento</h4>
+                  <ul className="space-y-2 text-muted-foreground text-sm">
+                    <li>• Ropa ligera y cómoda</li>
+                    <li>• Gafas de sol deportivas</li>
+                    <li>• Protector solar</li>
+                    <li>• Balón de voleibol de playa</li>
+                    <li>• Calzado apropiado (opcional)</li>
+                    <li>• Hidratación constante</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/30 overflow-hidden">
+              <CardContent className="p-8">
+                <h4 className="text-2xl font-black text-foreground mb-4 uppercase tracking-wide text-center">
+                  ¿Por qué elegir Voleibol de Playa?
+                </h4>
+                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-black text-sm">1</span>
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-foreground mb-1">Deporte completo</h5>
+                        <p className="text-sm text-muted-foreground">
+                          Trabaja todos los grupos musculares con saltos, carreras y movimientos explosivos en la arena.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-black text-sm">2</span>
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-foreground mb-1">Trabajo en equipo</h5>
+                        <p className="text-sm text-muted-foreground">
+                          Con solo 2 jugadores, la comunicación y sincronización son fundamentales para el éxito.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-black text-sm">3</span>
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-foreground mb-1">Ambiente único</h5>
+                        <p className="text-sm text-muted-foreground">
+                          Disfruta del aire libre, el sol y la brisa marina mientras practicas tu deporte favorito.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                        <span className="text-primary font-black text-sm">4</span>
+                      </div>
+                      <div>
+                        <h5 className="font-bold text-foreground mb-1">Competitivo y recreativo</h5>
+                        <p className="text-sm text-muted-foreground">
+                          Desde torneos profesionales hasta partidos casuales con amigos, hay opciones para todos.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-
-          {activeTab === "beach" && (
-            <div className="space-y-8 animate-in fade-in duration-500">
-              <Card className="bg-card border-2 border-primary/20 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
-                <div className="grid md:grid-cols-2">
-                  <div className="relative h-64 md:h-auto">
-                    <img
-                      src="/beach-volleyball-players-on-sand-sunny-day.jpg"
-                      alt="Voleibol de Playa"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-background/50 to-transparent md:block hidden"></div>
-                  </div>
-                  <CardContent className="p-8 flex flex-col justify-center">
-                    <h3 className="text-3xl font-black text-foreground mb-4 uppercase tracking-wide">
-                      Voleibol de Playa
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      El voleibol de playa se juega al aire libre en arena con equipos de 2 jugadores. Requiere
-                      versatilidad, resistencia física y adaptación a las condiciones climáticas.
-                    </p>
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-foreground">
-                          <span className="font-black text-primary">Equipos:</span> 2 jugadores por equipo (sin
-                          sustituciones)
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-foreground">
-                          <span className="font-black text-primary">Cancha:</span> 16m x 8m en arena con red a 2.43m
-                          (hombres) / 2.24m (mujeres)
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-foreground">
-                          <span className="font-black text-primary">Sets:</span> Mejor de 3 sets, primeros 2 a 21
-                          puntos, 3ro a 15
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-foreground">
-                          <span className="font-black text-primary">Versatilidad:</span> Cada jugador debe dominar todas
-                          las habilidades
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6">
-                    <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Beneficios</h4>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Entrenamiento al aire libre</li>
-                      <li>• Mayor resistencia física</li>
-                      <li>• Fortalece piernas en arena</li>
-                      <li>• Conexión con la naturaleza</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6">
-                    <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Diferencias</h4>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Solo 2 jugadores por equipo</li>
-                      <li>• Sin rotaciones ni posiciones fijas</li>
-                      <li>• Balón más suave y grande</li>
-                      <li>• Influencia del viento y sol</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6">
-                    <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Equipamiento</h4>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Ropa ligera y cómoda</li>
-                      <li>• Gafas de sol deportivas</li>
-                      <li>• Protector solar</li>
-                      <li>• Balón de voleibol de playa</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          )}
-
-          {activeTab === "indoor" && (
-            <div className="space-y-8 animate-in fade-in duration-500">
-              <Card className="bg-card border-2 border-primary/20 overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
-                <div className="grid md:grid-cols-2">
-                  <div className="relative h-64 md:h-auto">
-                    <img
-                      src="/indoor-volleyball-game-intense-action.jpg"
-                      alt="Voleibol Indoor"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-background/50 to-transparent md:block hidden"></div>
-                  </div>
-                  <CardContent className="p-8 flex flex-col justify-center">
-                    <h3 className="text-3xl font-black text-foreground mb-4 uppercase tracking-wide">
-                      Voleibol Indoor
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      El voleibol indoor se juega en una cancha cubierta con equipos de 6 jugadores. Es un deporte
-                      dinámico que requiere coordinación, estrategia y trabajo en equipo excepcional.
-                    </p>
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-foreground">
-                          <span className="font-black text-primary">Equipos:</span> 6 jugadores por equipo en cancha
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-foreground">
-                          <span className="font-black text-primary">Cancha:</span> 18m x 9m con red a 2.43m (hombres) /
-                          2.24m (mujeres)
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-foreground">
-                          <span className="font-black text-primary">Sets:</span> Mejor de 5 sets, primeros 4 a 25
-                          puntos, 5to a 15
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-foreground">
-                          <span className="font-black text-primary">Posiciones:</span> Colocador, líbero, central,
-                          opuesto, receptor-atacante
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6">
-                    <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Beneficios</h4>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Mejora la coordinación y reflejos</li>
-                      <li>• Fortalece todo el cuerpo</li>
-                      <li>• Desarrolla trabajo en equipo</li>
-                      <li>• Aumenta la resistencia cardiovascular</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6">
-                    <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Habilidades</h4>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Saque (servicio)</li>
-                      <li>• Recepción y pase</li>
-                      <li>• Ataque y remate</li>
-                      <li>• Bloqueo y defensa</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-card border-l-4 border-l-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6">
-                    <h4 className="text-xl font-black text-foreground mb-3 uppercase tracking-wide">Equipamiento</h4>
-                    <ul className="space-y-2 text-muted-foreground text-sm">
-                      <li>• Zapatillas especializadas</li>
-                      <li>• Rodilleras protectoras</li>
-                      <li>• Ropa deportiva cómoda</li>
-                      <li>• Balón oficial de voleibol</li>
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          )}
         </div>
       </div>
+
+      <style>{`
+        @keyframes bounce-ball {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+        .animate-bounce-ball {
+          animation: bounce-ball 3s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   )
 }

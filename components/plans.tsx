@@ -54,7 +54,7 @@ export function Plans() {
   ]
 
   return (
-    <section id="planes" className="py-24 bg-background relative overflow-hidden">
+    <section id="planes" className="pt-24 pb-8 bg-background relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
@@ -130,11 +130,10 @@ export function Plans() {
             {plans.map((plan, index) => (
               <Card
                 key={index}
-                className={`relative transition-all duration-300 ${
-                  plan.highlighted
-                    ? "bg-primary border-primary shadow-2xl shadow-primary/30 scale-105 hover:scale-110"
-                    : "bg-card border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 hover:scale-105"
-                }`}
+                className={`relative transition-all duration-300 ${plan.highlighted
+                  ? "bg-primary border-primary shadow-2xl shadow-primary/30 scale-105 hover:scale-110"
+                  : "bg-card border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 hover:scale-105"
+                  }`}
               >
                 {plan.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-foreground text-background px-6 py-2 rounded-full text-sm font-black uppercase tracking-wider flex items-center gap-2 shadow-lg">
@@ -144,17 +143,15 @@ export function Plans() {
                 )}
                 <CardHeader className="text-center pb-8 pt-8">
                   <CardTitle
-                    className={`text-2xl font-black uppercase tracking-wide mb-2 ${
-                      plan.highlighted ? "text-primary-foreground" : "text-foreground"
-                    }`}
+                    className={`text-2xl font-black uppercase tracking-wide mb-2 ${plan.highlighted ? "text-primary-foreground" : "text-foreground"
+                      }`}
                   >
                     {plan.name}
                   </CardTitle>
                   <div className="flex items-baseline justify-center gap-1">
                     <span
-                      className={`text-5xl font-black ${
-                        plan.highlighted ? "text-primary-foreground" : "text-foreground"
-                      }`}
+                      className={`text-5xl font-black ${plan.highlighted ? "text-primary-foreground" : "text-foreground"
+                        }`}
                     >
                       {plan.price}
                     </span>
@@ -165,9 +162,8 @@ export function Plans() {
                     </span>
                   </div>
                   <p
-                    className={`text-sm mt-2 ${
-                      plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"
-                    }`}
+                    className={`text-sm mt-2 ${plan.highlighted ? "text-primary-foreground/80" : "text-muted-foreground"
+                      }`}
                   >
                     {plan.description}
                   </p>
@@ -177,9 +173,8 @@ export function Plans() {
                     {plan.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start gap-3">
                         <Check
-                          className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                            plan.highlighted ? "text-primary-foreground" : "text-primary"
-                          }`}
+                          className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.highlighted ? "text-primary-foreground" : "text-primary"
+                            }`}
                         />
                         <span className={`text-sm ${plan.highlighted ? "text-primary-foreground" : "text-foreground"}`}>
                           {feature}
@@ -188,11 +183,10 @@ export function Plans() {
                     ))}
                   </ul>
                   <Button
-                    className={`w-full uppercase tracking-wider font-bold shadow-lg transition-all duration-300 ${
-                      plan.highlighted
-                        ? "bg-foreground text-background hover:bg-foreground/90 hover:shadow-xl hover:scale-105"
-                        : "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 hover:scale-105"
-                    }`}
+                    className={`w-full uppercase tracking-wider font-bold shadow-lg transition-all duration-300 ${plan.highlighted
+                      ? "bg-foreground text-background hover:bg-foreground/90 hover:shadow-xl hover:scale-105"
+                      : "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/30 hover:scale-105"
+                      }`}
                     size="lg"
                   >
                     Seleccionar Plan

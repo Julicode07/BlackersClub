@@ -47,15 +47,6 @@ export function About() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="flex justify-center mb-6">
-              <Image
-                src="/blackers-logo.png"
-                alt="Blackers Logo"
-                width={80}
-                height={80}
-                className="w-16 h-16 md:w-20 md:h-20 opacity-80 animate-float"
-              />
-            </div>
             <h2 className="text-5xl md:text-6xl font-black text-foreground uppercase tracking-tight mb-4 text-balance">
               Quiénes Somos
             </h2>
